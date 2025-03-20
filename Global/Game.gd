@@ -12,7 +12,7 @@ var Harvests = [{
 
 var Selected = 0
 
-var Exp = 0
+var Exp: int = 0
 
 
 var Level = 1
@@ -24,3 +24,6 @@ func levelUp():
 #var Health
 
 #var UnlockArea
+
+
+	

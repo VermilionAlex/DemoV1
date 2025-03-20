@@ -63,6 +63,10 @@ func _on_Corn_body_entered(body):
 					"Consumable": true,
 				}]
 			Game.Plot[PlantNum]["Harvested"] = true
+			Game.Exp += 1
+			Game.levelUp()
+			print("Cur Exp:" +str(Game.Exp))
+			print("Level is:" + str(Game.Level))
 			get_parent().has_seed = false
 			queue_free()
 		
