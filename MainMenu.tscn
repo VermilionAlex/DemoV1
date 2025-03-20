@@ -87,9 +87,9 @@ text = "Main Menu"
 
 [node name="Settings" type="Button" parent="."]
 margin_left = 183.0
-margin_top = 146.0
+margin_top = 139.0
 margin_right = 338.0
-margin_bottom = 188.0
+margin_bottom = 181.0
 custom_colors/icon_color_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -110,5 +110,24 @@ margin_right = 48.0
 margin_bottom = 27.0
 texture = SubResource( 8 )
 
+[node name="Credits" type="Button" parent="."]
+margin_left = 184.0
+margin_top = 194.0
+margin_right = 339.0
+margin_bottom = 236.0
+custom_colors/icon_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+action_mode = 0
+text = "      Credits"
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
