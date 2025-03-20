@@ -79,9 +79,9 @@ text = "Return"
 
 [node name="Text" type="RichTextLabel" parent="."]
 margin_left = 166.0
-margin_top = 85.0
+margin_top = 82.0
 margin_right = 351.0
-margin_bottom = 212.0
+margin_bottom = 209.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 custom_constants/shadow_offset_x = 1

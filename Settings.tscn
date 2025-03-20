@@ -55,9 +55,9 @@ text = "        Controls"
 
 [node name="Return" type="Button" parent="."]
 margin_left = 187.0
-margin_top = 160.0
+margin_top = 158.0
 margin_right = 342.0
-margin_bottom = 202.0
+margin_bottom = 200.0
 custom_colors/icon_color_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )

@@ -112,9 +112,9 @@ texture = SubResource( 8 )
 
 [node name="Credits" type="Button" parent="."]
 margin_left = 184.0
-margin_top = 194.0
+margin_top = 195.0
 margin_right = 339.0
-margin_bottom = 236.0
+margin_bottom = 237.0
 custom_colors/icon_color_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
