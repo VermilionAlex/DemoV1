@@ -1,7 +1,7 @@
 extends Node
 
 
-const SAVE_PATH: String = "user://savegame.data"
+const SAVE_PATH: String = "user://savegame.bin"
 const SAVE_PASS: String = "password"
 
 
@@ -22,9 +22,17 @@ func get_file(is_write: bool):
 func save_game():
 	var save_game: File = get_file(true)
 	var data: Dictionary = {
-		#"exp": Game.Exp,
+		#
+		#"level": Game.Level,
+		"Plot": Game.Plot,
+		"Harvests": Game.Harvests,
+		"exp": Game.Exp,
 		"level": Game.Level,
+		
 	}
+	#print(data)
+#	print("save")
+#	print("check")
 	save_game.store_line(to_json(data))
 	save_game.close()
 	
@@ -35,6 +43,10 @@ func load_game():
 	while not save_game.eof_reached():
 		var current_line = parse_json(save_game.get_line())
 		if current_line:
-			#Game.exp = current_line["exp"]
+		
+			Game.Plot = current_line["Plot"]
+			Game.Harvests = current_line["Harvests"]
+			Game.Exp = current_line["exp"]
 			Game.Level = current_line["level"]
+			
 	save_game.close()

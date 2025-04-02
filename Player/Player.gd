@@ -13,7 +13,7 @@ func _ready():
 	change_state("idle")
 
 func get_input():
-	#Utils.save_game()
+	Utils.save_game()
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_left"):
 		move_left()

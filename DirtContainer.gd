@@ -12,7 +12,9 @@ const Tomatoe = preload("res://Plants/Tomato.tscn")
 
 func _ready():
 	var landPlot = Game.Plot
-	#print(landPlot.size())
+	print(Game.Harvests)
+	print(landPlot)
+	print(landPlot.size())
 	if landPlot.size() > 0:
 		for i in landPlot.size():
 			match (landPlot[i-1]["Seed"]):
@@ -26,7 +28,7 @@ func _ready():
 					if has_node(dirt_name):
 						get_child(i).add_child(plant1)
 						get_child(i).has_seed = true
-			
+						Utils.save_game()
 						
 				"Tomato":
 					Game.Plot.pop_at(i)
@@ -38,4 +40,4 @@ func _ready():
 					if has_node(dirt_name):
 						get_child(i).add_child(plant1)
 						get_child(i).has_seed = true
-		
+						Utils.save_game()
