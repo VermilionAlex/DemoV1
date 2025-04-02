@@ -6,9 +6,16 @@ var Plot = [
 
 var Harvests = [{
 	"Name": "Tomato",
-	"Count": 1,
+	"Count": 0,
 	"Consumable": true,
-}]
+}
+#,
+#{
+#	"Name": "Corn",
+#	"Count": 0,
+#	"Consumable": true,
+#	}
+]
 
 var Selected = 0
 

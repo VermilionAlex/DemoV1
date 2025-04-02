@@ -40,12 +40,12 @@ func _process(delta):
 			plant.frame = 11
 	
 			$Label.visible = true
-
+	#Utils.save_game()
 func _on_Timer_timeout():
 	if stage <= 5:
 		stage += 1
 	Game.Plot[PlantNum]["Stage"] = stage
-
+	Utils.save_game()
 
 
 
@@ -76,7 +76,7 @@ func _on_Tomato_body_entered(body):
 			print("Level is:" + str(Game.Level))
 			get_parent().has_seed = false
 			queue_free()
-
+			Utils.save_game()
 
 
 

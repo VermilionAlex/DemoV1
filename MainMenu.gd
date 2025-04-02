@@ -1,22 +1,25 @@
 extends Node2D
 
 
+var plotLoad= []
+
 func _ready():
-	#Utils.save_game()
-	
-	#Utils.load_game()
+	Utils.save_game()
+	#pass
+
+func _on_Button_pressed():
+	Utils.load_game()
+
 	var size = Game.Plot.size()
 	var i = 0
 	while i < size:
 		match (Game.Plot[i]["Harvested"]):
 			true:
-				Game.Plot.pop_at(i)
-				size -= 1
-			false:
 				pass
+			false:
+				plotLoad += [Game.Plot[i]]
 		i += 1
-
-func _on_Button_pressed():
+	Game.Plot = plotLoad
 	get_tree().change_scene("res://World.tscn")
 
 

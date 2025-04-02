@@ -66,10 +66,10 @@ position = Vector2( 51, 231 )
 [node name="Inventory" parent="." instance=ExtResource( 2 )]
 
 [node name="Level" type="RichTextLabel" parent="."]
-margin_left = 46.0
-margin_top = 26.0
-margin_right = 85.0
-margin_bottom = 59.0
+margin_left = 32.0
+margin_top = 11.0
+margin_right = 71.0
+margin_bottom = 44.0
 script = SubResource( 2 )
 
 [node name="Control" type="Control" parent="."]
