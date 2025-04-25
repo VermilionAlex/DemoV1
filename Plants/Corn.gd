@@ -18,21 +18,14 @@ func _ready():
 		"TimeLeft": timer.time_left,
 		"Stage": stage,
 		"Harvested": false,
+		"Index" : 0,
 	}]
 	
 
 func _process(delta):
 	Game.Plot[PlantNum]["TimeLeft"] = timer.time_left
 	match stage:
-		1:
-			plant.frame = stage
-		2:
-			plant.frame = stage
-		3:
-			plant.frame = stage
-		4:
-			plant.frame = stage
-		5:
+		1, 2, 3, 4, 5:
 			plant.frame = stage
 		6:
 			plant.frame = 5
@@ -62,12 +55,16 @@ func _on_Corn_body_entered(body):
 					"Count": 1,
 					"Consumable": true,
 				}]
+				
 			Game.Plot[PlantNum]["Harvested"] = true
+			#Game.Plot.pop_at(PlantNum)
+			#Game.Plot.sort()
 			Game.Exp += 1
 			Game.levelUp()
 			print("Cur Exp:" +str(Game.Exp))
 			print("Level is:" + str(Game.Level))
 			get_parent().has_seed = false
 			queue_free()
+			
 			Utils.save_game()
 		

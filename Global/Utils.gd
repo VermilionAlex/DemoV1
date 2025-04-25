@@ -28,6 +28,8 @@ func save_game():
 		"Harvests": Game.Harvests,
 		"exp": Game.Exp,
 		"level": Game.Level,
+		"gold": Game.Gold,
+		"unlock": Game.Unlocked,
 		
 	}
 	#print(data)
@@ -48,5 +50,6 @@ func load_game():
 			Game.Harvests = current_line["Harvests"]
 			Game.Exp = current_line["exp"]
 			Game.Level = current_line["level"]
-			
+			Game.Gold = current_line["gold"]
+			Game.Unlocked = current_line["unlock"]
 	save_game.close()
