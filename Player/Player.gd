@@ -21,10 +21,16 @@ func get_input():
 		move_right()
 	if Input.is_action_pressed("ui_up"):
 		move_up()
+		print(Game.Harvests)
+		print(Game.Plot)
+		print(Game.Plot.size())
+		print("check")
+		
+				
 	if Input.is_action_pressed("ui_down"):
 		move_down()
 	velocity = velocity.normalized()*speed
-	
+
 	
 #Call on function and move based on input
 func _process(delta):

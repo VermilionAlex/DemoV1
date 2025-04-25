@@ -17,6 +17,9 @@ var has_seed = false
 func _on_Dirt_input_event(viewport, event, shape_idx):
 	if !has_seed:
 		if event.is_action("Spawn"):
+			print(Game.Harvests)
+			print(Game.Plot)
+				
 			match Game.Selected:
 				0:
 					var plant1 = Corn.instance()

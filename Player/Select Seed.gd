@@ -9,7 +9,7 @@ func _ready():
 	
 func _input(event):
 
-	if(Game.Level >= 5):
+	if(Game.Level >= 3 and Game.Unlocked == true):
 		$Seed2.visible = true
 		if event.is_action_pressed("Select_Up"):
 			print(Game.Selected)

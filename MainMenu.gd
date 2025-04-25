@@ -4,8 +4,8 @@ extends Node2D
 var plotLoad= []
 
 func _ready():
-	Utils.save_game()
-	#pass
+	#Utils.save_game()
+	pass
 
 func _on_Button_pressed():
 	Utils.load_game()
