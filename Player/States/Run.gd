@@ -37,3 +37,14 @@ func move_right():
 	animation.play("Walk Right")
 
 
+func chop_down():	
+	change_state.call_func("chop")
+	
+func chop_right():	
+	change_state.call_func("chop")
+	
+func chop_up():	
+	change_state.call_func("chop")
+	
+func chop_left():	
+	change_state.call_func("chop")

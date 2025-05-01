@@ -38,5 +38,10 @@ var Unlocked = false
 
 #var UnlockArea
 
+var Direction = Vector2.DOWN
 
+
+var CheckDead = false
+var RespawnPosition: Vector2
 	
+var CharPos: Vector2

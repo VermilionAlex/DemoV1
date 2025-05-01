@@ -70,3 +70,16 @@ func _on_SellButton1_pressed():
 					Game.Harvests[i]["Count"] -=1
 					Game.Gold += 1
 		
+
+
+
+func _on_SellTtoe_pressed():
+	if(Game.Unlocked):
+		for i in Game.Harvests.size():
+			if "Tomato" in Game.Harvests[i]["Name"]:
+				if Game.Harvests[i]["Count"] >= 1:
+					Game.Harvests[i]["Count"] -=1
+					Game.Gold += 3
+	else:
+		pass
+		
