@@ -27,9 +27,9 @@ func _on_Button_pressed():
 
 
 func _on_Settings_pressed():
-	get_tree().change_scene("res://Settings.tscn")
+	get_tree().change_scene("res://MenuSections/Settings.tscn")
 
 
 
 func _on_Credits_pressed():
-	get_tree().change_scene("res://Credits.tscn")
+	get_tree().change_scene("res://MenuSections/Credits.tscn")

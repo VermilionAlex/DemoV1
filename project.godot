@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "State",
+"class": "Chopping",
+"language": "GDScript",
+"path": "res://Player/States/Chop.gd"
+}, {
+"base": "State",
 "class": "IdleState",
 "language": "GDScript",
 "path": "res://Player/States/Idle.gd"
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://Player/States/State_Manager.gd"
 } ]
 _global_script_class_icons={
+"Chopping": "",
 "IdleState": "",
 "PersistentState": "",
 "Running": "",
@@ -156,6 +162,11 @@ Open_Resource={
 Open_Shop={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":79,"unicode":0,"echo":false,"script":null)
+ ]
+}
+chop={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":67,"unicode":0,"echo":false,"script":null)
  ]
 }
 

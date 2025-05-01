@@ -1,7 +1,7 @@
 extends Node
 
 
-const SAVE_PATH: String = "user://savegame.bin"
+const SAVE_PATH: String = "user://savegame.save"
 const SAVE_PASS: String = "password"
 
 

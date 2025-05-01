@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://AssetPacks/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-7-8x14-sproutLands.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://AssetPacks/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" type="Texture" id=2]
@@ -73,6 +73,9 @@ texture = ExtResource( 2 )
 region_rect = Rect2( 837, 100, 22, 24 )
 modulate_color = Color( 1, 0, 0, 1 )
 
+[sub_resource type="StreamTexture" id=17]
+load_path = "res://.import/Basic_Plants.png-483d5dac39f9c30e8395945598119984.stex"
+
 [sub_resource type="DynamicFont" id=14]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -93,6 +96,7 @@ func _process(delta):
 script = ExtResource( 5 )
 
 [node name="Shop Buy" type="NinePatchRect" parent="."]
+visible = false
 margin_left = 64.0
 margin_top = 23.0
 margin_right = 455.0
@@ -424,7 +428,6 @@ custom_styles/pressed = SubResource( 13 )
 custom_styles/normal = SubResource( 13 )
 
 [node name="Shop Sell" type="NinePatchRect" parent="."]
-visible = false
 margin_left = 64.0
 margin_top = 23.0
 margin_right = 455.0
@@ -452,7 +455,7 @@ margin_left = 11.0
 margin_top = 7.0
 margin_right = 29.0
 margin_bottom = 25.0
-texture = ExtResource( 3 )
+texture = SubResource( 17 )
 region_rect = Rect2( 80, 0, 16, 16 )
 
 [node name="CostUnlock1" type="NinePatchRect" parent="Shop Sell/CornContainer"]
@@ -523,6 +526,106 @@ bbcode_text = "[center]Sell Price[/center]"
 text = "Sell Price"
 
 [node name="SellButton1" type="Button" parent="Shop Sell/CornContainer"]
+modulate = Color( 0.733333, 0.0509804, 0.811765, 1 )
+margin_left = 52.0
+margin_top = 62.0
+margin_right = 113.0
+margin_bottom = 88.0
+custom_colors/font_color_disabled = Color( 0.992157, 0.956863, 0.956863, 1 )
+custom_colors/font_color_focus = Color( 1, 0.988235, 0.988235, 1 )
+custom_colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 14 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 9 )
+action_mode = 0
+text = "Sell 1"
+
+[node name="TtoeContainer2" type="NinePatchRect" parent="Shop Sell"]
+margin_left = 191.0
+margin_top = 51.0
+margin_right = 229.0
+margin_bottom = 83.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 201, 57, 30, 30 )
+
+[node name="TtoeIcon" type="NinePatchRect" parent="Shop Sell/TtoeContainer2"]
+margin_left = 10.0
+margin_top = 7.0
+margin_right = 28.0
+margin_bottom = 25.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 80, 16, 16, 16 )
+
+[node name="CostUnlock1" type="NinePatchRect" parent="Shop Sell/TtoeContainer2"]
+margin_left = 69.0
+margin_top = 36.0
+margin_right = 111.0
+margin_bottom = 54.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 259, 180, 90, 25 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Shop Sell/TtoeContainer2/CostUnlock1"]
+margin_left = 4.0
+margin_top = 2.0
+margin_right = 41.0
+margin_bottom = 16.0
+custom_constants/margin_right = 1
+custom_constants/margin_top = 1
+custom_constants/margin_left = 1
+custom_constants/margin_bottom = 0
+
+[node name="MoneyText" type="RichTextLabel" parent="Shop Sell/TtoeContainer2/CostUnlock1/MarginContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 36.0
+margin_bottom = 14.0
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 5 )
+bbcode_enabled = true
+bbcode_text = "[center]3[/center]"
+text = "3"
+
+[node name="MoneyIcon2" type="NinePatchRect" parent="Shop Sell/TtoeContainer2/CostUnlock1"]
+modulate = Color( 0.0784314, 1, 0, 1 )
+margin_left = -24.0
+margin_top = -3.0
+margin_right = -3.0
+margin_bottom = 18.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 805, 134, 22, 22 )
+
+[node name="SellTitle1" type="NinePatchRect" parent="Shop Sell/TtoeContainer2"]
+margin_left = 44.0
+margin_top = 2.0
+margin_right = 138.0
+margin_bottom = 26.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 259, 180, 90, 25 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Shop Sell/TtoeContainer2/SellTitle1"]
+margin_left = 4.0
+margin_top = 5.0
+margin_right = 91.0
+margin_bottom = 20.0
+custom_constants/margin_right = 1
+custom_constants/margin_top = 1
+custom_constants/margin_left = 1
+custom_constants/margin_bottom = 0
+
+[node name="SellPrice1" type="RichTextLabel" parent="Shop Sell/TtoeContainer2/SellTitle1/MarginContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 86.0
+margin_bottom = 15.0
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Sell Price[/center]"
+text = "Sell Price"
+
+[node name="SellTtoe" type="Button" parent="Shop Sell/TtoeContainer2"]
 modulate = Color( 0.733333, 0.0509804, 0.811765, 1 )
 margin_left = 52.0
 margin_top = 62.0
@@ -661,5 +764,6 @@ custom_styles/normal = SubResource( 13 )
 [connection signal="pressed" from="Shop Buy/Tomato/PurchaseTomato" to="." method="_on_PurchaseTomato_pressed"]
 [connection signal="pressed" from="Shop Buy/BuyExit" to="." method="_on_BuyExit_pressed"]
 [connection signal="pressed" from="Shop Sell/CornContainer/SellButton1" to="." method="_on_SellButton1_pressed"]
+[connection signal="pressed" from="Shop Sell/TtoeContainer2/SellTtoe" to="." method="_on_SellTtoe_pressed"]
 [connection signal="pressed" from="Shop Sell/BuyButton" to="." method="_on_BuyButton_pressed"]
 [connection signal="pressed" from="Shop Sell/SellExit" to="." method="_on_SellExit_pressed"]

@@ -1,11 +1,34 @@
 extends Area2D
 
-#Code tutorial/template from CodingQuests on YouTube
+
+#Referencing tutorial/template from CodingQuests on YouTube
+
+
+#Animation variables
+var Ctime = 0.0
+var speed = 2.0  
+var original_color = Color(1, 1, 1, 1)  
+var target_color = Color(1.5, 1.5, 1.5, 1)  
+var amplitude := 2 
+var base_y := 0.0   
+
+
+#Animation for spinning
+var flip_speed = 2.0 
+var Ftime = 0.0
+
+
+#Plant stages
 var stage = 1
 var PlantNum = -1
 onready var timer = $Timer
 var time = 0.0
 onready var plant = $Sprite
+
+
+
+
+
 
 
 func _ready():
@@ -29,13 +52,30 @@ func _process(delta):
 			plant.frame = stage
 		6:
 			plant.frame = 5
-	#Utils.save_game()
+			time += delta * speed
+			var t = (sin(time) + 1.0) / 2.0  # Smooth oscillation between 0 and 1
+			$Sprite.modulate = original_color.linear_interpolate(target_color, t)
+			position.y = base_y + sin(time) * amplitude
+			
+			#Flip animation
+			Ftime += delta * flip_speed
+			var scale_x = cos(time)
+			$Sprite.scale.x = scale_x
+
+
 func _on_Timer_timeout():
 	if stage <= 5:
 		stage += 1
 	Game.Plot[PlantNum]["Stage"] = stage
 	Utils.save_game()
 
+
+func freeNull():
+	Ctime = null
+	speed= null
+	flip_speed = null
+	Ftime = null
+	
 
 func _on_Corn_body_entered(body):
 	var has_item = false
@@ -64,6 +104,8 @@ func _on_Corn_body_entered(body):
 			print("Cur Exp:" +str(Game.Exp))
 			print("Level is:" + str(Game.Level))
 			get_parent().has_seed = false
+			freeNull()
+			
 			queue_free()
 			
 			Utils.save_game()

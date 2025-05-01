@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://AssetPacks/Sprout Lands - UI Pack - Basic pack/fonts/pixelFont-7-8x14-sproutLands.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Credits.gd" type="Script" id=2]
+[ext_resource path="res://MenuSections/Credits.gd" type="Script" id=2]
 [ext_resource path="res://AssetPacks/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Setting menu.png" type="Texture" id=3]
 [ext_resource path="res://AssetPacks/Sprout Lands - UI Pack - Basic pack/Sprite sheets/UI Big Play Button.png" type="Texture" id=4]
 

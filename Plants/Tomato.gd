@@ -1,6 +1,20 @@
 extends Area2D
 
-#Code tutorial/template from CodingQuests on YouTube
+#Referencing tutorial from CodingQuests on YouTube
+
+
+#Animation variables
+var Ctime = 0.0
+var speed = 2.0  
+var original_color = Color(1, 1, 1, 1)  
+var target_color = Color(1.5, 1.5, 1.5, 1)  
+var amplitude := 2 
+var base_y := 0.0   
+
+
+#Animation for spinning
+var flip_speed = 2.0 
+var Ftime = 0.0
 
 
 onready var timer = $Timer
@@ -38,8 +52,17 @@ func _process(delta):
 			plant.frame = stage + 6
 		6:
 			plant.frame = 11
-	
-			$Label.visible = true
+			time += delta * speed
+			var t = (sin(time) + 1.0) / 2.0  # Smooth oscillation between 0 and 1
+			$Sprite.modulate = original_color.linear_interpolate(target_color, t)
+			position.y = base_y + sin(time) * amplitude
+			
+			#Flip animation
+			Ftime += delta * flip_speed
+			var scale_x = cos(time)
+			$Sprite.scale.x = scale_x
+
+
 	#Utils.save_game()
 func _on_Timer_timeout():
 	if stage <= 5:
@@ -69,7 +92,7 @@ func _on_Tomato_body_entered(body):
 					"Consumable": true,
 				}]
 			Game.Plot[PlantNum]["Harvested"] = true
-			$Label.visible= false
+
 			Game.Exp += 1
 			Game.levelUp()
 			print("Cur Exp:" +str(Game.Exp))

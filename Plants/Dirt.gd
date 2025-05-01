@@ -2,7 +2,7 @@ extends Area2D
 
 
 const Corn = preload("res://Plants/Corn.tscn")
-const Tomatoe = preload("res://Plants/Tomato.tscn")
+const Ttoe = preload("res://Plants/Tomato.tscn")
 
 
 
@@ -26,6 +26,6 @@ func _on_Dirt_input_event(viewport, event, shape_idx):
 					self.add_child(plant1)
 					has_seed = true
 				1:
-					var plant1 = Tomatoe.instance()
+					var plant1 = Ttoe.instance()
 					self.add_child(plant1)
 					has_seed = true
