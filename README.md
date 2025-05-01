@@ -1,7 +1,6 @@
 # Development Doc
 
 The general development process involved first planning and then to start working on each goal one at a time. At some points, I had to just start testing on a feature if it was too volatile. If something was working mostly functional, I would move onto the next. Each step required researching and deciding a more efficient way that would allow me to learn about the tools. I would end up using LDtk to test and have an idea on how to design my world maps. There were a lot of inbuilt tools that would allow me to test and plan before fully implementing. To ensure I would not have any issues on Git and my main file, I would end up making copies of my game and testing possibly more volatile features. 
-For creating the 
 ## Design Decisions
 - From my research and also testing with saving and loading, Godot has a more straightforward way of allowing user saves. This is done from storing the data in user cache in a web game from “user://”. The idea to just use Godot’s inbuilt save system over database plugins and APIs like SilentWolf and Firebase, was mainly because it is not a multiplayer game and is not meant to be a complex game.
 - SilentWolf has also been improved more for Godot 4 and from my testing, has limitations for storing data.
